@@ -1,9 +1,13 @@
+import { RollupOptions } from 'rollup';
 import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 
-export default {
+/**
+ * @type RollupOptions
+ */
+const options = {
   input: 'src/index.js',
   output: {
     file: "dist/index.min.js",
@@ -23,3 +27,4 @@ export default {
     terser()
   ]
 };
+export default options;
